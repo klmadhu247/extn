@@ -82,7 +82,7 @@ export default defineContentScript({
       ) {
         modal.style.display = "none";
         generateBtn.textContent = "Generate";
-        insertBtn.style.display = "none"; // Hide the insert button when closing the modal
+        insertBtn.style.display = "none";
       }
     });
 
@@ -94,7 +94,7 @@ export default defineContentScript({
     };
 
     generateBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent click event from bubbling up to the document
+      e.stopPropagation(); 
       const inputValue = inputText.value.trim();
       if (!inputValue) return;
     
@@ -138,9 +138,9 @@ export default defineContentScript({
     
         generateBtn.disabled = false;
 
-        // Update button to show Regenerate with logo
-        generateBtn.style.backgroundColor = "#007bff"; // Set the background color
-        generateBtn.style.color = "white"; // Ensure text color is white
+        
+        generateBtn.style.backgroundColor = "#007bff"; 
+        generateBtn.style.color = "white"; 
         generateBtn.innerHTML = `<img src="${reGenIcon}" alt="Regenerate" style="vertical-align: middle; margin-right: 5px; width: 16px; height: 16px"> <b>Regenerate</b>`;
         
         inputText.value = "";
